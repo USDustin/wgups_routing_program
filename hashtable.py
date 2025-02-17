@@ -2,7 +2,7 @@
 
 class HashTable:
 
-    def __init__(self, initial_size=15):
+    def __init__(self, initial_size=40):
 
         self.size = initial_size
         self.table = [[] for _ in range(self.size)] # Create a list of lists
