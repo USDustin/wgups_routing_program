@@ -64,10 +64,11 @@ def calculate_distance(address1_index, address2_index, distance_list):
     """Calculate the distance between two addresses using the data from distance-file.csv"""
     # Distance is stored in a 2D list
     # The larger index must be used for row and the smaller for column
-    if distance_list[address1_index][address2_index] == "":
-        return distance_list[address2_index][address1_index]
-    else:
-        return distance_list[address1_index][address2_index]
+    match distance_list[address1_index][address2_index]:
+        case "":
+            return distance_list[address2_index][address1_index]
+        case _:
+            return distance_list[address1_index][address2_index]
 
 def create_truck(truck_number):
     """Creates a truck object with default values"""
