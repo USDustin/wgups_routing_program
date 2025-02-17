@@ -78,15 +78,27 @@ def create_truck(truck_number):
     truck_capacity = 16
     starting_address = "4001 South 700 East"
     depart_time = datetime.strptime("08:00:00", "%H:%M:%S").time()
-    if truck_number is 1:
-        truck = Truck(avg_speed, truck_capacity, [2, 31, 5, 36, 6, 38, 39, 30, 35, 23, 26, 27, 1], 0,
-                      0, starting_address, depart_time)
-        return truck
-    elif truck_number is 2:
-        truck = Truck(avg_speed, truck_capacity, [10, 13, 20, 14, 40, 37, 29, 21, 17, 15, 25, 34, 22], 0,
-                      0, starting_address, depart_time)
-        return truck
-    elif truck_number is 3:
-        truck = Truck(avg_speed, truck_capacity, [33, 8, 12, 3, 24, 32, 16, 11, 19, 4, 28, 18, 7, 9], 0,
-                      0, starting_address, depart_time)
-        return truck
+
+    match truck_number:
+        case 1:
+            # Truck 1 (Leaves at 8:00 AM, prioritizes early deadlines)
+            # 13 packages
+            package_list = [1, 13, 14, 15, 16, 19, 20, 29, 30, 31, 34, 37, 40]
+            truck = Truck(avg_speed, truck_capacity, package_list, 0,
+                          0, starting_address, depart_time)
+            return truck
+        case 2:
+            # Truck 2 (Leaves at 9:05 AM, takes delayed packages & must-be-on-truck-2 packages)
+            # 8 packages
+            package_list = [3, 6, 18, 25, 28, 32, 36, 38]
+            truck = Truck(avg_speed, truck_capacity, package_list, 0,
+                          0, starting_address, depart_time)
+            return truck
+        case 3:
+            # Truck 3 (Leaves after 10:20 AM, takes package #9 and remaining packages)
+            # 19 packages
+            package_list = [2, 4, 5, 7, 8, 9, 10, 11, 12, 17, 21, 22, 23, 24, 26, 27, 33, 35, 39]
+            truck = Truck(avg_speed, truck_capacity, package_list, 0,
+                          0, starting_address, depart_time)
+            return truck
+
