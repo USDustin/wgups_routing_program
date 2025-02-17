@@ -21,17 +21,21 @@ def main():
     address_list = utils.read_address_file("resources/address-file.csv")
 
     package_table = HashTable()
-    list_of_packages = utils.load_packages(package_list, package_table)
+    utils.load_package_list(package_list, package_table)
+
+    print(package_table.__str__())
+    print(package_table.__len__())
+    print(package_table.lookup(5))
+
+    distance_between = utils.calculate_distance(10,5,distance_list)
+
+    # Three trucks and two drivers are available for deliveries.
+    truck_1 = utils.create_truck(1)
+    truck_2 = utils.create_truck(2)
+    truck_3 = utils.create_truck(3)
 
 
 
-    #package_table = HashTable()
-
-    #distance_data = load_distances_csv("resources/distance-file.csv")
-    #load_packages_csv("resources/package-file.csv", package_table)
-
-    #print(distance_data)
-    #print(package_table)
 
     # Initialize the truck objects
     #depart_time_str = "08:00:00"
