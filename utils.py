@@ -59,7 +59,7 @@ def read_address_file(file_path):
 
 def calculate_distance(address1_index, address2_index, distance_list):
     """Calculate the distance between two addresses using the data from distance-file.csv"""
-    # Distance is stored in a 2D list, where the first index is the row and the second index is the column
+    # Distance is stored in a 2D list
     # The larger index must be used for row and the smaller for column
     if distance_list[address1_index][address2_index] is "":
         return distance_list[address2_index][address1_index]
