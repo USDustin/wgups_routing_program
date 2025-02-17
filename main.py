@@ -23,13 +23,13 @@ def main():
     package_table = HashTable()
     utils.load_package_list(package_list, package_table)
 
-    print(package_table.__str__())
-    print(package_table.__len__())
-    print(package_table.lookup(5))
+    #print(package_table.__str__())
+    #print(package_table.__len__())
+    #print(package_table.lookup(5))
 
     distance_between = utils.calculate_distance(10,5,distance_list)
 
-    # Three trucks and two drivers are available for deliveries.
+    # Initialize 3 trucks and load them with data
     truck_1 = utils.create_truck(1)
     truck_2 = utils.create_truck(2)
     truck_3 = utils.create_truck(3)
