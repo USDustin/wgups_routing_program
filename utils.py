@@ -103,3 +103,36 @@ def create_truck(truck_number):
                           0, starting_address, depart_time)
             return truck
 
+def dijkstra_algorithm(distance_matrix, start_address):
+    """ Dijkstra's Algo"""
+    # float('inf') is used to represent infinity
+    number_of_addresses = len(distance_matrix)
+    unvisited_addresses = set(range(number_of_addresses))
+    # Initialize the shortest distances list with all addresses as infinity
+    shortest_distances = [float('inf')] * number_of_addresses
+    # Initialize the previous addresses list with all addresses as none
+    previous_addresses = [None] * number_of_addresses
+    # Set the starting address distance to 0
+    shortest_distances[start_address] = 0
+    # Loop until all addresses have been visited
+    while unvisited_addresses:
+        # Find which address has the shortest distance
+        current_address = min(unvisited_addresses, key=lambda address_index:
+            shortest_distances[address_index])
+        current_distance = shortest_distances[current_address]
+        # Remove the current address from the unvisited set if it's not infinity
+        if current_distance == float('inf'):
+            break
+        unvisited_addresses.remove(current_address)
+
+        # Update distances to neighboring addresses
+        for neighbor_index, distance in enumerate(distance_matrix[current_address]):
+            if distance > 0 and neighbor_index in unvisited_addresses:
+                new_distance = current_distance + distance
+                if new_distance < shortest_distances[neighbor_index]:
+                    shortest_distances[neighbor_index] = new_distance
+                    previous_addresses[neighbor_index] = current_address
+
+
+
+
