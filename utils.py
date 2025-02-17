@@ -75,6 +75,28 @@ def create_truck(truck_number):
     # Default values for all trucks
     # avg_speed = 18, truck_capacity = 16, starting_address = "4001 South 700 East", depart_time = "08:00:00"
     # One of the trucks can't leave until 10:20 am since the delivery address for package #9 is wrong
+    """
+    P1: Deadline 10:30 am
+    P3: Must be on truck 2
+    P6: Delayed until 9:05 am, deadline 10:30 am
+    P9: Wrong address, will be fixed at 10:20 am
+    P13: Deadline 10:30 am
+    P14: Must be delivered with P15, P19. Deadline 10:30 am
+    P16: Must be delivered with P13, P19. Deadline 10:30 am
+    P18: Must be on truck 2
+    P20: Must be delivered with P13, P15. Deadline 10:30 am
+    P25: Delayed until 9:05 am. Deadline 10:30 am
+    P28: Delayed until 9:05 am
+    P29: Deadline 10:30 am
+    P30: Deadline 10:30 am
+    P31: Deadline 10:30 am
+    P32: Delayed until 9:05 am
+    P34: Deadline 10:30 am
+    P36: Must be on truck 2
+    P37: Deadline 10:30 am
+    P38: Must be on truck 2
+    P40: Deadline 10:30 am
+    """
     avg_speed = 18
     truck_capacity = 16
     starting_address = "4001 South 700 East"
