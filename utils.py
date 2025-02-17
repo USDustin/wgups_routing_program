@@ -20,7 +20,7 @@ def load_package_list(package_list, package_table):
             zip_code = row[4],
             deadline = row[5],
             weight = row[6],
-            special_notes = row[7]
+            status = "at the hub"
         )
         package_table.insert(package.package_id, package)
 
