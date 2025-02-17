@@ -25,11 +25,12 @@ class HashTable:
         # Check if package_id is already in the hash table, then update
         for i, (pid, _) in enumerate(bucket):
             if pid == package_id:
-                bucket[i] = (package_id, package) # Change this line to add a package object to the bucket
+                bucket[i] = [package_id, package] # Change this line to add a package object to the bucket
                 return
 
         # If package_id is not in the hash table, append to end of table
-        bucket.append((package_id, package))
+        bucket.append([package_id, package])
+        return
 
     def lookup(self, package_id):
         """Return the package associated with the package_id"""
