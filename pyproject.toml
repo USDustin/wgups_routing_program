@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "wgups-routing-program"
+name = "wgups_routing_program"
 version = "0.1.0"
 description = ""
 authors = ["Dustin Luttrell <52095131+USDustin@users.noreply.github.com>"]
