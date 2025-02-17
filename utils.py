@@ -1,8 +1,16 @@
 import csv
 from package import Package
 
-def load_packages(package_list, package_table):
-    """Loads package list from csv file into a hash table"""
+def load_package_list(package_list, package_table):
+    """Loads package objects from list into a hash table"""
+    # A.  Develop a hash table, without using any additional libraries or classes, that has an insertion function that
+    # takes the package ID as input and inserts each of the following data components into the hash table:
+    # •   delivery address
+    # •   delivery deadline
+    # •   delivery city
+    # •   delivery zip code
+    # •   package weight
+    # •   delivery status (i.e., at the hub, en route, or delivered), including the delivery time
     for row in package_list:
         package = Package(
             package_id = int(row[0]),
