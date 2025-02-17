@@ -136,3 +136,34 @@ def dijkstra_algorithm(distance_matrix, start_address):
 
 
 
+def generate_initial_route(distance_matrix, starting_location=0):
+    """Generates an initial route using a greedy nearest neighbor algorithm"""
+    """
+    Create a set of unvisited locations and a route list
+    Start at the starting location and remove it from unvisited locations
+    Loop through the unvisited locations looking for the one with the shortest distance
+        Find the nearest unvisited location
+        Add it to the route
+        Remove it from unvisited locations
+    return the shortest route
+    """
+    number_of_locations = len(distance_matrix)
+    unvisited_locations = set(range(number_of_locations))
+    route = [starting_location]
+    unvisited_locations.remove(starting_location)
+
+    for _ in unvisited_locations:
+        # Find the nearest unvisited location
+        last_visited_location = route[-1]
+        nearest_location = min(unvisited_locations, key=lambda location_index:
+            distance_matrix[last_visited_location][location_index])
+        route.append(nearest_location)
+        unvisited_locations.remove(nearest_location)
+    return route
+
+#    while unvisited_locations:
+#        current_location = route[-1]
+#        nearest_location = min(unvisited_locations, key=lambda x: distance_matrix[current_location][x])
+#        route.append(nearest_location)
+#        unvisited_locations.remove(nearest_location)
+#    pass
