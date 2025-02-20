@@ -31,24 +31,13 @@ def main():
 
     distance_between = utils.calculate_distance(10,5,distance_list)
 
-    # Initialize 3 trucks and load them with data
-    truck_1 = utils.create_truck(1)
-    truck_2 = utils.create_truck(2)
-    truck_3 = utils.create_truck(3)
+    truck_1 = Truck(1)
+    truck_2 = Truck(2)
+    truck_3 = Truck(3)
 
-
-
-
-    # Initialize the truck objects
-    #depart_time_str = "08:00:00"
-    #depart_time = datetime.strptime(depart_time_str, "%H:%M:%S").time()
-    #truck_1 = Truck(16,18, depart_time,)
-
-    # Load the trucks
-    # Schedule the deliveries
-    # Deliver the packages
-
-
+    truck_1.load_truck()
+    truck_2.load_truck()
+    truck_3.load_truck()
 
 
 if __name__ == "__main__":
