@@ -1,9 +1,12 @@
+import utils
 
 
 class DeliveryScheduler:
 
-    def __init__(self):
-        pass
+    def __init__(self, distance_table, package_table, truck_list):
+        self.distance_table = distance_table
+        self.package_table = package_table
+        self.truck_list = truck_list
 
     def nearest_neighbor(self, truck, address_list):
         """
