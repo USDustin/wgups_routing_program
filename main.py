@@ -16,6 +16,8 @@ from datetime import datetime, time
 
 def main():
 
+    distance_table = DistanceTable("resources/distance-file.csv")
+    distance_list = distance_table.distance_list
     package_list = utils.read_packages_file("resources/package-file.csv")
     distance_list = utils.read_distances_file("resources/distance-file.csv")
     address_list = utils.read_address_file("resources/address-file.csv")
