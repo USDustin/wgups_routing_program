@@ -2,19 +2,20 @@
 
 class Truck:
 
-    def __init__(self, speed, capacity, packages, load, miles, address, depart_time):
 
-        self.speed = speed
-        self.capacity = capacity
-        self.packages = packages
-        self.load = load
-        self.miles = miles
-        self.address = address
-        self.depart_time = depart_time
+    def __init__(self, truck_id):
+        """
+        Initializes the Truck class with default values
+        """
+        self.truck_id = truck_id
+        self.speed = 18
+        self.capacity = 16
+        self.packages = []
+        self.load = 0
+        self.miles = 0
+        self.address = "4001 South 700 East"
+        self.depart_time = "08:00:00"
 
-
-#    def load_truck(self):
-#        pass
 
 #    def deliver_packages(self):
 #        pass
