@@ -47,12 +47,6 @@ def read_packages_file(file_path):
         package_list = list(csv_reader)
         return package_list
 
-def read_distances_file(file_path):
-    """Reads resources/distance-file.csv and returns a list of distance data."""
-    with open(file_path, "r") as file:
-        csv_reader = csv.reader(file)
-        distance_list = list(csv_reader)
-        return distance_list
 
 def read_address_file(file_path):
     """Reads resources/address-file.csv and returns a list of address data."""
