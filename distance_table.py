@@ -1,9 +1,10 @@
-
+import csv
 
 class DistanceTable:
 
-    def __init__(self):
-        pass
+    def __init__(self, file):
+        self.file = file
+        self.distance_list = self._read_distances()
 
     def _read_distances(self):
         """Reads resources/distance-file.csv and returns a 2D list of distance data."""
@@ -23,4 +24,4 @@ class DistanceTable:
                 return self.distance_list[address1][address2]
 
     def __str__(self):
-        pass
+        return f"{self.distance_list}"
