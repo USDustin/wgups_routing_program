@@ -2,7 +2,8 @@ import csv
 from datetime import datetime, time
 
 from package import Package
-from truck import Truck
+from address import Address
+
 
 def load_package_list(package_list, package_table):
     """Loads package objects from list into a hash table"""
@@ -57,8 +58,16 @@ def read_address_file(file_path):
     """Reads resources/address-file.csv and returns a list of address data."""
     with open(file_path, "r") as file:
         csv_reader = csv.reader(file)
-        address_list = list(csv_reader)
+        address_list = []
+        for address_data in csv_reader:
+            address_list.append(Address(int(address_data[0]), address_data[1], address_data[2]))
         return address_list
+
+def get_address_index(address, address_list):
+    for val in address_list:
+        if address in val.street:
+            return val.address_index
+
 
 def calculate_distance(address1_index, address2_index, distance_list):
     """Calculate the distance between two addresses using the data from distance-file.csv"""
