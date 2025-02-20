@@ -17,14 +17,11 @@ from datetime import datetime, time
 def main():
 
     distance_table = DistanceTable("resources/distance-file.csv")
-    distance_list = distance_table.distance_list
     package_list = utils.read_packages_file("resources/package-file.csv")
     package_table = HashTable()
     address_list = utils.read_address_file("resources/address-file.csv")
 
     utils.load_package_list(package_list, package_table)
-
-    distance_between = utils.calculate_distance(10,5,distance_list)
 
     truck_1 = Truck(1)
     truck_2 = Truck(2)
@@ -33,7 +30,6 @@ def main():
     truck_1.load_truck()
     truck_2.load_truck()
     truck_3.load_truck()
-
 
     truck_list = [truck_1, truck_2, truck_3]
     scheduler = DeliveryScheduler(distance_table, package_table, truck_list)
