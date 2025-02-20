@@ -22,12 +22,7 @@ def main():
     package_table = HashTable()
     address_list = utils.read_address_file("resources/address-file.csv")
 
-    package_table = HashTable()
     utils.load_package_list(package_list, package_table)
-
-    #print(package_table.__str__())
-    #print(package_table.__len__())
-    #print(package_table.lookup(5))
 
     distance_between = utils.calculate_distance(10,5,distance_list)
 
