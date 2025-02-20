@@ -41,3 +41,7 @@ class DeliveryScheduler:
 
 
 
+    def create_route(self, address_list):
+        """Creates a route for each truck"""
+        for truck in self.truck_list:
+            self.nearest_neighbor(truck, address_list)
