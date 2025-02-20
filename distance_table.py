@@ -13,7 +13,14 @@ class DistanceTable:
             return distance_list
 
     def get_distance(self, address1, address2):
-        pass
+        """Calculate the distance between two addresses using the data from distance-file.csv"""
+        # Distance is stored in a 2D list
+        # The larger index must be used for row and the smaller for column
+        match self.distance_list[address1][address2]:
+            case "":
+                return self.distance_list[address2][address1]
+            case _:
+                return self.distance_list[address1][address2]
 
     def __str__(self):
         pass
