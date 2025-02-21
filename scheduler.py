@@ -56,5 +56,26 @@ class DeliveryScheduler:
 
     def create_route(self, address_list):
         """Creates a route for each truck"""
-        for truck in self.truck_list:
-            self.nearest_neighbor(truck, address_list)
+    def deliver_packages(self, truck, delivery_route):
+        """
+        Loads and delivers packages in the order determined by the nearest neighbor algorithm
+        """
+        current_address_index = 0
+        # Load the truck with packages in order of delivery
+        for package in delivery_route:
+            truck.packages.append(package)
+            truck.load += float(package.weight)
+
+        # Deliver packages in order of delivery
+        for package in delivery_route:
+            # if truck.truck_id == 3:
+            #     print(f'Truck 3 current time: {truck.current_time}')
+            address_index = utils.get_address_index(package.address, self.address_list)
+            miles = float(self.distance_table.get_distance(
+                current_address_index, address_index))
+            truck.miles += miles
+            truck.address = package.address
+            truck.current_time += datetime.timedelta(hours=(miles / truck.speed))
+            package.delivery_time = truck.current_time
+            package.depart_time = truck.depart_time
+            current_address_index = address_index
