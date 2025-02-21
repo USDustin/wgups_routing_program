@@ -25,7 +25,7 @@ class CommandLineInterface:
                 time_delta = datetime.timedelta(hours=int(hours), minutes=int(minutes), seconds=int(seconds))
                 package = self.package_table.lookup(package_id)
                 package.update_status(time_delta)
-                print(f"{package.__str__()}")
+                print(str(package))
             except ValueError:
                 print("\n❌ Invalid time format. Please enter a valid time (HH:MM:SS).")
                 return
