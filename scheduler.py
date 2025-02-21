@@ -54,8 +54,10 @@ class DeliveryScheduler:
         return delivery_route
 
 
-    def create_route(self, address_list):
+    def create_route(self, truck):
         """Creates a route for each truck"""
+        return self.nearest_neighbor(truck, self.address_list)
+
     def deliver_packages(self, truck, delivery_route):
         """
         Loads and delivers packages in the order determined by the nearest neighbor algorithm
