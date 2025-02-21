@@ -32,6 +32,7 @@ class DeliveryScheduler:
         # Customize comparison logic by passing a lambda function to min()
         # Lambda function compares the distance between the current address and the package address
         # Using distance_table and index of address in address_list
+        # Append the nearest package to the delivery route
         while remaining_packages:
             nearest_package = min(remaining_packages, key=lambda package:
             self.distance_table.get_distance(current_address_index,
