@@ -43,7 +43,7 @@ class Truck:
                 self.packages = [3, 6, 18, 25, 28, 32, 36, 38]
 
             case 3:
-                # Truck 3 (Leaves after 10:20 AM, takes package #9 and remaining packages)
+                # Truck 3 (Leaves after 10:20 AM and once another driver is back, takes package #9 and remaining packages)
                 # 19 packages
                 self.packages = [2, 4, 5, 7, 8, 9, 10, 11, 12, 17, 21, 22, 23, 24, 26, 27, 33, 35, 39]
 
