@@ -17,6 +17,8 @@ class CommandLineInterface:
         """Allows the user to view the status of a single package by ID at a specific time."""
         try:
             package_id = int(input("Enter a package ID: "))
+            if package_id < 1 or package_id > 40:
+                raise ValueError
             try:
                 input_time = input("Enter a time (HH:MM:SS): ")
                 (hours, minutes, seconds) = input_time.split(":")
@@ -28,7 +30,7 @@ class CommandLineInterface:
                 print("\n❌ Invalid time format. Please enter a valid time (HH:MM:SS).")
                 return
         except ValueError:
-            print("\n❌ Invalid input! Please enter a numeric package ID (1-40) and valid time (HH:MM:SS).")
+            print("\n❌ Invalid input! Please enter a numeric package ID (1-40).")
 
 
     def get_input_time(self):
