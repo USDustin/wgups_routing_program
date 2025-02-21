@@ -49,5 +49,12 @@ def main():
     truck_3.depart_time = depart_time
     truck_3.current_time = depart_time
     scheduler.deliver_packages(truck_3, truck_3_route)
+
+    truck_list = [truck_1, truck_2, truck_3]
+
+
+    cli = CommandLineInterface(package_table, truck_list)
+    cli.print_menu()
+
 if __name__ == "__main__":
     main()
