@@ -48,7 +48,8 @@ class DeliveryScheduler:
             nearest_package.depart_time = truck.depart_time
             current_address_index = utils.get_address_index(self.package_table.lookup(nearest_package.package_id).address,
                                                             address_list)
-
+        # Return the optimized delivery route
+        return delivery_route
 
 
     def create_route(self, address_list):
