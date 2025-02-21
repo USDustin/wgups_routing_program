@@ -28,5 +28,5 @@ class Package:
     def __str__(self):
         return (f"Package ID: {self.package_id}, Address: {self.address}, City: {self.city}, State: {self.state},"
                 f" Zip Code: {self.zip_code}, Deadline: {self.deadline}, Weight: {self.weight},"
-                f" Status: {self.status}")
+                f" Status: {self.status}, Delivery Time: {self.delivery_time}")
 
