@@ -21,9 +21,10 @@ class Package:
                 self.status = "Delivered"
             case (_, True):
                 # User inputted time is before the departure time
-                self.status = "En route"
-            case _:
                 self.status = "At the hub"
+            case _:
+                # User inputted time is between the delivery and departure times
+                self.status = "En route"
 
     def __str__(self):
         return (f"Package ID: {self.package_id}, Address: {self.address}, City: {self.city}, State: {self.state},"
