@@ -39,15 +39,7 @@ class DeliveryScheduler:
                                             utils.get_address_index(self.package_table.lookup(package.package_id).address,
                                                                     address_list)))
             delivery_route.append(nearest_package)
-            truck.packages.append(nearest_package)
             remaining_packages.remove(nearest_package)
-            truck.miles += float(self.distance_table.get_distance(current_address_index,
-                                                           utils.get_address_index(self.package_table.lookup(nearest_package.package_id).address,
-                                                                                   address_list)))
-            truck.address = self.package_table.lookup(nearest_package.package_id).address
-            truck.current_time += datetime.timedelta(hours=(truck.miles / truck.speed))
-            nearest_package.delivery_time = truck.current_time
-            nearest_package.depart_time = truck.depart_time
             current_address_index = utils.get_address_index(self.package_table.lookup(nearest_package.package_id).address,
                                                             address_list)
         # Return the optimized delivery route
