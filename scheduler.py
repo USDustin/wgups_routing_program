@@ -3,10 +3,11 @@ import datetime
 
 class DeliveryScheduler:
 
-    def __init__(self, distance_table, package_table, truck_list):
+    def __init__(self, distance_table, package_table, address_list):
         self.distance_table = distance_table
         self.package_table = package_table
-        self.truck_list = truck_list
+        self.address_list = address_list
+
 
     def nearest_neighbor(self, truck, address_list):
         """
