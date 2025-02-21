@@ -39,6 +39,9 @@ class DeliveryScheduler:
             delivery_route.append(nearest_package)
             truck.packages.append(nearest_package)
             remaining_packages.remove(nearest_package)
+            truck.miles += float(self.distance_table.get_distance(current_address_index,
+                                                           utils.get_address_index(self.package_table.lookup(nearest_package.package_id).address,
+                                                                                   address_list)))
             current_address_index = utils.get_address_index(self.package_table.lookup(nearest_package.package_id).address,
                                                             address_list)
 
