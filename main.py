@@ -10,6 +10,7 @@ from distance_table import DistanceTable
 from package import Package
 from scheduler import DeliveryScheduler
 from truck import Truck
+from interface import CommandLineInterface
 
 from datetime import datetime, time
 
