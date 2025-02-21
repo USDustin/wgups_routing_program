@@ -1,5 +1,5 @@
 import csv
-from datetime import datetime, time
+import datetime
 
 from package import Package
 from address import Address
@@ -73,4 +73,18 @@ def calculate_distance(address1_index, address2_index, distance_list):
         case _:
             return distance_list[address1_index][address2_index]
 
+def depart_time(truck_1, truck_2):
+    """
+    Determines the departure time for truck 3
+    Based on the return time of truck 1, truck 2, and the time package #9 address is corrected
+    """
+    early_time = min(truck_1.current_time, truck_2.current_time)
+    late_time = max(truck_1.current_time, truck_2.current_time)
+    match (early_time > datetime.timedelta(hours=10, minutes=20), late_time > datetime.timedelta(hours=10, minutes=20)):
+        case (True, _):
+            return early_time
+        case (False, True):
+            return late_time
+        case _:
+            return late_time
 
