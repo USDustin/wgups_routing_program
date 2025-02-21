@@ -45,5 +45,9 @@ def main():
     scheduler.deliver_packages(truck_1, truck_1_route)
     scheduler.deliver_packages(truck_2, truck_2_route)
 
+    depart_time = utils.depart_time(truck_1, truck_2)
+    truck_3.depart_time = depart_time
+    truck_3.current_time = depart_time
+    scheduler.deliver_packages(truck_3, truck_3_route)
 if __name__ == "__main__":
     main()
