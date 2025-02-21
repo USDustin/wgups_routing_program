@@ -35,7 +35,11 @@ def main():
     truck_3.load_truck()
 
     scheduler = DeliveryScheduler(distance_table, package_table, address_list)
-    for truck in truck_list: scheduler.create_route(truck)
+    truck_1_route = scheduler.create_route(truck_1)
+    truck_2_route = scheduler.create_route(truck_2)
+    truck_3_route = scheduler.create_route(truck_3)
+
+
 
 if __name__ == "__main__":
     main()
