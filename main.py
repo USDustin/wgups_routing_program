@@ -40,6 +40,10 @@ def main():
     truck_3_route = scheduler.create_route(truck_3)
 
 
+    # There are 3 trucks and 2 drivers
+    # truck_3 can not leave until one of the others has returned, and it's after 10:20 AM
+    scheduler.deliver_packages(truck_1, truck_1_route)
+    scheduler.deliver_packages(truck_2, truck_2_route)
 
 if __name__ == "__main__":
     main()
