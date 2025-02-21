@@ -22,7 +22,7 @@ class CommandLineInterface:
             try:
                 input_time = input("Enter a time (HH:MM:SS): ")
                 (hours, minutes, seconds) = input_time.split(":")
-                time_delta = datetime.timedelta(int(hours), int(minutes), int(seconds))
+                time_delta = datetime.timedelta(hours=int(hours), minutes=int(minutes), seconds=int(seconds))
                 package = self.package_table.lookup(package_id)
                 package.update_status(time_delta)
                 print(f"{package.__str__()}")
