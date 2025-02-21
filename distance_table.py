@@ -19,9 +19,9 @@ class DistanceTable:
         # The larger index must be used for row and the smaller for column
         match self.distance_list[address1][address2]:
             case "":
-                return self.distance_list[address2][address1]
+                return float(self.distance_list[address2][address1])
             case _:
-                return self.distance_list[address1][address2]
+                return float(self.distance_list[address1][address2])
 
     def __str__(self):
         return f"{self.distance_list}"
