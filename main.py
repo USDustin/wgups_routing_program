@@ -27,15 +27,14 @@ def main():
     truck_1 = Truck(1)
     truck_2 = Truck(2)
     truck_3 = Truck(3)
+    truck_list = [truck_1, truck_2, truck_3]
 
     truck_1.load_truck()
     truck_2.load_truck()
     truck_3.load_truck()
 
-    truck_list = [truck_1, truck_2, truck_3]
-    scheduler = DeliveryScheduler(distance_table, package_table, truck_list)
-    scheduler.create_route(address_list)
-
+    scheduler = DeliveryScheduler(distance_table, package_table, address_list)
+    for truck in truck_list: scheduler.create_route(truck)
 
 if __name__ == "__main__":
     main()
