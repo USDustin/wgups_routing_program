@@ -3,7 +3,6 @@ import datetime
 
 class Truck:
 
-
     def __init__(self, truck_id):
         """
         Initializes the Truck class with default values
@@ -17,7 +16,6 @@ class Truck:
         self.address = "4001 South 700 East"
         self.depart_time = self._set_depart_time()
         self.current_time = self.depart_time
-
 
     def _set_depart_time(self):
         match self.truck_id:
@@ -48,9 +46,6 @@ class Truck:
                 # 19 packages
                 self.packages = [2, 4, 5, 7, 8, 9, 10, 11, 12, 17, 21, 22, 23, 24, 26, 27, 33, 35, 39]
 
-
-#    def deliver_packages(self):
-#        pass
 
     def __str__(self):
         return (f"Truck: {self.speed}, {self.capacity}, {self.packages}, {self.load}, {self.miles}, {self.address},"
