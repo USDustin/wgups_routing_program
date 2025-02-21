@@ -11,6 +11,8 @@ class Package:
         self.deadline = deadline
         self.weight = weight
         self.status = status
+        self.delivery_time = None
+        self.depart_time = None
 
     def update_status(self, time_delta):
         pass
