@@ -15,7 +15,15 @@ class Package:
         self.depart_time = None
 
     def update_status(self, time_delta):
-        pass
+        match (self.delivery_time < time_delta, self.depart_time > time_delta):
+            case (True, _):
+                # User inputted time is after the delivery time
+                self.status = "Delivered"
+            case (_, True):
+                # User inputted time is before the departure time
+                self.status = "En route"
+            case _:
+                self.status = "At the hub"
 
     def __str__(self):
         return (f"Package ID: {self.package_id}, Address: {self.address}, City: {self.city}, State: {self.state},"
