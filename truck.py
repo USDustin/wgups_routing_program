@@ -14,7 +14,18 @@ class Truck:
         self.load = 0
         self.miles = 0
         self.address = "4001 South 700 East"
-        self.depart_time = "08:00:00"
+        self.depart_time = self._set_depart_time()
+        self.current_time = self.depart_time
+
+
+    def _set_depart_time(self):
+        match self.truck_id:
+            case 1:
+                return datetime.timedelta(hours=8)
+            case 2:
+                return datetime.timedelta(hours=9, minutes=5)
+            case 3:
+                return datetime.timedelta(hours=10, minutes=20)
 
     def load_truck(self):
         """
