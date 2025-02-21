@@ -38,15 +38,15 @@ class CommandLineInterface:
 
     def print_menu(self):
         while True:
-            print("\n" + "=" * 50)
+            print(f'\n' + f'=' * 50)
             print(f"{'Western Governors University Parcel Service': ^50}")
-            print("=" * 50)
-            print("\n1. View delivery status of a package")
-            print("2. View all packages at a specific time")
-            print("3. View total mileage traveled by all trucks")
-            print("4. Exit\n")
+            print(f'=' * 50)
+            print(f'\n1. View delivery status of a package')
+            print(f'2. View all packages at a specific time')
+            print(f'3. View total mileage traveled by all trucks')
+            print(f'4. Exit\n')
 
-            choice = input("Enter your choice (1-4): ").strip()
+            choice = input(f'Enter your choice (1-4): ').strip()
 
             match choice:
                 case "1":
@@ -58,4 +58,4 @@ class CommandLineInterface:
                 case "4":
                     break
                 case _:
-                    print("Invalid choice. Please try again.")
+                    print(f'❌ Invalid choice. Please try again.')
