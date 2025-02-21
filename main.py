@@ -22,6 +22,7 @@ def main():
     package_table = HashTable()
     address_list = utils.read_address_file("resources/address-file.csv")
 
+    package_table = HashTable()
     utils.load_package_list(package_list, package_table)
 
     truck_1 = Truck(1)
