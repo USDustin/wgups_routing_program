@@ -4,6 +4,7 @@ Student ID: 010433124
 Email: dlutrel@wgu.edu
 Date: 2025-02-10
 """
+
 import utils
 from hashtable import HashTable
 from distance_table import DistanceTable
@@ -55,6 +56,7 @@ def main():
 
     cli = CommandLineInterface(package_table, truck_list)
     cli.print_menu()
+
 
 if __name__ == "__main__":
     main()
