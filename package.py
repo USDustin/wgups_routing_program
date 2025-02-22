@@ -27,7 +27,7 @@ class Package:
                 self.status = "En route"
 
     def __str__(self):
-        return (f"Package ID: {self.package_id}, Address: {self.address}, City: {self.city}, State: {self.state},"
-                f" Zip Code: {self.zip_code}, Deadline: {self.deadline}, Weight: {self.weight},"
-                f" Status: {self.status}, Delivery Time: {self.delivery_time}")
+        return (f"\nPackage ID: {self.package_id}\n  Address: {self.address}\n  City: {self.city}\n  State: {self.state}\n"
+                f"  Zip Code: {self.zip_code}\n  Deadline: {self.deadline}\n  Weight: {self.weight}\n"
+                f"  Status: {self.status}\n  Delivery Time: {self.delivery_time}")
 
