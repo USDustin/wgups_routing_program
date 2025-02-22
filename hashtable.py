@@ -40,7 +40,7 @@ class HashTable:
         for pid, package in bucket:
             if pid == package_id:
                 return package
-            return None
+        return None
 
     def update(self, key, value):
         pass
