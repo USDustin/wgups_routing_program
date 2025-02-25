@@ -13,9 +13,11 @@ class CommandLineInterface:
         print(f"\nTotal miles driven: {total_miles}")
 
     def print_package_status(self):
-        """Allows the user to view the status of a single package by ID at a specific time."""
+        """
+        Allows the user to view the status of a single package by ID at a specific time.
+        """
         try:
-            package_id = int(input("Enter a package ID: "))
+            package_id = int(input("\nEnter a package ID: "))
             if package_id < 1 or package_id > 40:
                 raise ValueError
             try:
