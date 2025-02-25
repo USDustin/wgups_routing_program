@@ -59,3 +59,12 @@ class CommandLineInterface:
                     break
                 case _:
                     print(f'❌ Invalid choice. Please try again.')
+
+def return_to_menu():
+    while True:
+        try:
+            print("\n")
+            input("Press Enter to return to the main menu...")
+            break
+        except ValueError:
+            print("❌ Invalid input! Please try again.")
