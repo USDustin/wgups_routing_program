@@ -51,10 +51,13 @@ class CommandLineInterface:
             match choice:
                 case "1":
                     self.print_package_status()
+                    return_to_menu()
                 case "2":
-                    self.get_input_time()
+                    self.print_all_packages()
+                    return_to_menu()
                 case "3":
                     self.print_total_miles()
+                    return_to_menu()
                 case "4":
                     break
                 case _:
