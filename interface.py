@@ -10,8 +10,7 @@ class CommandLineInterface:
         total_miles = 0
         for truck in self.truck_list:
             total_miles += truck.miles
-        print(f"Total miles driven: {total_miles}")
-        return total_miles
+        print(f"\nTotal miles driven: {total_miles}")
 
     def print_package_status(self):
         """Allows the user to view the status of a single package by ID at a specific time."""
