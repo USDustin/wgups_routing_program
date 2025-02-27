@@ -85,8 +85,7 @@ class CommandLineInterface:
 def return_to_menu():
     while True:
         try:
-            print("\n")
-            input("Press Enter to return to the main menu...")
+            input("\nPress Enter to return to the main menu...")
             break
         except ValueError:
-            print("❌ Invalid input! Please try again.")
+            print("\n❌ Invalid input! Please try again.")
