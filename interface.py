@@ -10,7 +10,9 @@ class CommandLineInterface:
         total_miles = 0
         for truck in self.truck_list:
             total_miles += truck.miles
-        print(f"\nTotal miles driven: {total_miles}")
+    def print_miles_by_truck(self):
+        for truck in self.truck_list:
+            print(f'Truck {truck.truck_id} miles driven: {truck.miles:.2f}')
 
     def print_package_status(self):
         """
