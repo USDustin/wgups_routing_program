@@ -77,6 +77,7 @@ class CommandLineInterface:
                     self.print_miles_by_truck()
                     return_to_menu()
                 case "4":
+                    print(f'\nGoodbye!')
                     break
                 case _:
                     print(f'❌ Invalid choice. Please try again.')
