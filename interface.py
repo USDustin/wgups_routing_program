@@ -54,8 +54,8 @@ class CommandLineInterface:
             print(f'\n' + f'=' * 50)
             print(f"{'Western Governors University Parcel Service': ^50}")
             print(f'=' * 50)
-            print(f'\n1. View delivery status of a package')
-            print(f'2. View all packages at a specific time')
+            print(f'\n1. View status of a package at a specific time.')
+            print(f'2. View status of all packages at a specific time')
             print(f'3. View total mileage traveled by all trucks')
             print(f'4. Exit\n')
 
