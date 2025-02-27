@@ -80,7 +80,7 @@ class CommandLineInterface:
                     print(f'\nGoodbye!')
                     break
                 case _:
-                    print(f'❌ Invalid choice. Please try again.')
+                    print(f'\n❌ Invalid choice. Please try again.')
 
 def return_to_menu():
     while True:
