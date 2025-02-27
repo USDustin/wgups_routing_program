@@ -74,6 +74,7 @@ class CommandLineInterface:
                     return_to_menu()
                 case "3":
                     self.print_total_miles()
+                    self.print_miles_by_truck()
                     return_to_menu()
                 case "4":
                     break
