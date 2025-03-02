@@ -31,10 +31,7 @@ def main():
     truck_2 = Truck(2)
     truck_3 = Truck(3)
 
-    truck_1.load_truck()
-    truck_2.load_truck()
-    truck_3.load_truck()
-
+    # Create a delivery scheduler and create an optimized route for each truck
     scheduler = DeliveryScheduler(distance_table, package_table, address_list)
     truck_1_route = scheduler.create_route(truck_1)
     truck_2_route = scheduler.create_route(truck_2)
