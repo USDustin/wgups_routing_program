@@ -109,3 +109,15 @@ def get_user_truck_id_input():
     except ValueError:
         print(f'\n❌ Invalid truck ID! Please enter a numeric truck ID (1-3).')
         get_user_truck_id_input()
+
+def get_user_time_input():
+    try:
+        input_time = input(f'\nEnter a time (HH:MM:SS): ')
+        return get_timedelta(input_time)
+    except ValueError:
+        print(f'\n❌ Invalid time format. Please enter a valid time (HH:MM:SS).')
+        get_user_time_input()
+
+def get_timedelta(input_time):
+    (hours, minutes, seconds) = input_time.split(':')
+    return datetime.timedelta(hours=int(hours), minutes=int(minutes), seconds=int(seconds))
