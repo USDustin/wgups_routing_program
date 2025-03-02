@@ -36,7 +36,10 @@ class HashTable:
         return
 
     def lookup(self, package_id):
-        """Return the package associated with the package_id"""
+        """
+        Return the package associated with the package_id
+        Task 2 B
+        """
         index = self._hash(package_id)
         bucket = self.table[index]
 
