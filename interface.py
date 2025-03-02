@@ -115,7 +115,7 @@ def get_user_time_input():
         return get_timedelta(input_time)
     except ValueError:
         print(f'\n❌ Invalid time format. Please enter a valid time (HH:MM:SS).')
-        get_user_time_input()
+        return get_user_time_input()
 
 def get_timedelta(input_time):
     (hours, minutes, seconds) = input_time.split(':')
