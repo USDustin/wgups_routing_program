@@ -89,3 +89,14 @@ def return_to_menu():
             break
         except ValueError:
             print("\n❌ Invalid input! Please try again.")
+
+def get_user_package_id_input():
+    try:
+        package_id = int(input(f'Enter a package ID: '))
+        if package_id < 1 or package_id > 40:
+            raise ValueError
+        return package_id
+    except ValueError:
+        print(f'\n❌ Invalid package ID! Please enter a numeric package ID (1-40).')
+        return
+
