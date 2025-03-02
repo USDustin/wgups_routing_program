@@ -58,12 +58,13 @@ class CommandLineInterface:
             print(f'\n' + f'=' * 50)
             print(f"{'Western Governors University Parcel Service': ^50}")
             print(f'=' * 50)
-            print(f'\n1. View status of a package at a specific time.')
+            print(f'\n1. View status of a package at a specific time')
             print(f'2. View status of all packages at a specific time')
             print(f'3. View total mileage traveled by all trucks')
-            print(f'4. Exit\n')
+            print(f'4. View status of packages per truck')
+            print(f'5. Exit\n')
 
-            choice = input(f'Enter your choice (1-4): ').strip()
+            choice = input(f'Enter your choice (1-5): ').strip()
 
             match choice:
                 case "1":
