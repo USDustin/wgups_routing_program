@@ -107,7 +107,7 @@ def get_user_truck_id_input():
         return truck_id
     except ValueError:
         print(f'\n❌ Invalid truck ID! Please enter a numeric truck ID (1-3).')
-        get_user_truck_id_input()
+        return get_user_truck_id_input()
 
 def get_user_time_input():
     try:
