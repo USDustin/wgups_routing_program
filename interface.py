@@ -52,6 +52,10 @@ class CommandLineInterface:
             print(str(package))
 
     def print_menu(self):
+        """
+        Prints the main menu for the user to interact with
+        Allows the user to view status of packages by time, package id, or per truck
+        """
         while True:
             print(f'\n' + f'=' * 50)
             print(f"{'Western Governors University Parcel Service': ^50}")
