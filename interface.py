@@ -58,8 +58,8 @@ class CommandLineInterface:
             print(f'=' * 50)
             print(f'\n1. View status of a package at a specific time')
             print(f'2. View status of all packages at a specific time')
-            print(f'3. View total mileage traveled by all trucks')
-            print(f'4. View status of packages per truck')
+            print(f'3. View status of packages per truck')
+            print(f'4. View total mileage traveled by all trucks')
             print(f'5. Exit\n')
 
             choice = input(f'Enter your choice (1-5): ').strip()
@@ -72,11 +72,11 @@ class CommandLineInterface:
                     self.print_all_packages()
                     return_to_menu()
                 case "3":
-                    self.print_total_miles()
-                    self.print_miles_by_truck()
+                    self.print_packages_by_truck()
                     return_to_menu()
                 case "4":
-                    self.print_packages_by_truck()
+                    self.print_total_miles()
+                    self.print_miles_by_truck()
                     return_to_menu()
                 case "5":
                     print(f'\nGoodbye!')
