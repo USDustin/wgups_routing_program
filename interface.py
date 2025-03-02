@@ -53,6 +53,21 @@ class CommandLineInterface:
         except ValueError:
             print("\n❌ Invalid time format. Please enter a valid time (HH:MM:SS).")
 
+    def print_packages_by_truck(self):
+        """
+        Prints the status of all packages loaded onto a specific truck at a specific time
+        """
+        try:
+            truck_id = get_user_truck_id_input()
+            timedelta = get_user_time_input()
+            truck = self.truck_list[truck_id - 1]
+            for package in truck.packages:
+                package.update_status(timedelta)
+                print(str(package))
+        except ValueError:
+            print("\n❌ Invalid input! Please enter a numeric truck ID (1-3).")
+            return
+
     def print_menu(self):
         while True:
             print(f'\n' + f'=' * 50)
