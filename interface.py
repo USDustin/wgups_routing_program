@@ -77,6 +77,9 @@ class CommandLineInterface:
                     self.print_miles_by_truck()
                     return_to_menu()
                 case "4":
+                    self.print_packages_by_truck()
+                    return_to_menu()
+                case "5":
                     print(f'\nGoodbye!')
                     break
                 case _:
