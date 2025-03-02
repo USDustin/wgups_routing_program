@@ -47,9 +47,3 @@ class HashTable:
             if pid == package_id:
                 return package
         return None
-
-    def update(self, key, value):
-        pass
-
-    def delete(self, key):
-        pass
