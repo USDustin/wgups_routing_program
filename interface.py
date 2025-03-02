@@ -41,16 +41,12 @@ class CommandLineInterface:
         """
         Prints the status of all packages loaded onto a specific truck at a specific time
         """
-        try:
-            truck_id = get_user_truck_id_input()
-            timedelta = get_user_time_input()
-            truck = self.truck_list[truck_id - 1]
-            for package in truck.packages:
-                package.update_status(timedelta)
-                print(str(package))
-        except ValueError:
-            print("\n❌ Invalid input! Please enter a numeric truck ID (1-3).")
-            return
+        truck_id = get_user_truck_id_input()
+        timedelta = get_user_time_input()
+        truck = self.truck_list[truck_id - 1]
+        for package in truck.packages:
+            package.update_status(timedelta)
+            print(str(package))
 
     def print_menu(self):
         while True:
