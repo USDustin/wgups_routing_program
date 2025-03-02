@@ -30,16 +30,12 @@ class CommandLineInterface:
         """
         Prints all packages at a specific time
         """
-        try:
-            input_time = input("Enter a time (HH:MM:SS): ")
-            (hours, minutes, seconds) = input_time.split(":")
-            time_delta = datetime.timedelta(hours=int(hours), minutes=int(minutes), seconds=int(seconds))
-            for package_id in range(1, 41):
-                package = self.package_table.lookup(package_id)
-                package.update_status(time_delta)
-                print(str(package))
-        except ValueError:
-            print("\n❌ Invalid time format. Please enter a valid time (HH:MM:SS).")
+        timedelta = get_user_time_input()
+        for package_id in range(1, 41):
+            package = self.package_table.lookup(package_id)
+            print(timedelta)
+            package.update_status(timedelta)
+            print(str(package))
 
     def print_packages_by_truck(self):
         """
