@@ -32,10 +32,9 @@ class CommandLineInterface:
         Prints all packages at a specific time
         """
         timedelta = get_user_time_input()
-        print(f'\nStatus of all packages at {timedelta}:')
+        print(f'\nStatus of all packages at {timedelta}:\n')
         for package_id in range(1, 41):
             package = self.package_table.lookup(package_id)
-            print(timedelta)
             package.update_status(timedelta)
             print(str(package))
 
