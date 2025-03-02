@@ -20,23 +20,11 @@ class CommandLineInterface:
         """
         Allows the user to view the status of a single package by ID at a specific time.
         """
-        try:
-            package_id = int(input("\nEnter a package ID: "))
-            if package_id < 1 or package_id > 40:
-                raise ValueError
-            try:
-                input_time = input("Enter a time (HH:MM:SS): ")
-                (hours, minutes, seconds) = input_time.split(":")
-                time_delta = datetime.timedelta(hours=int(hours), minutes=int(minutes), seconds=int(seconds))
-                package = self.package_table.lookup(package_id)
-                package.update_status(time_delta)
-                print(str(package))
-            except ValueError:
-                print("\n❌ Invalid time format. Please enter a valid time (HH:MM:SS).")
-                return
-        except ValueError:
-            print("\n❌ Invalid input! Please enter a numeric package ID (1-40).")
-
+        package_id = get_user_package_id_input()
+        timedelta = get_user_time_input()
+        package = self.package_table.lookup(package_id)
+        package.update_status(timedelta)
+        print(str(package))
 
     def print_all_packages(self):
         """
