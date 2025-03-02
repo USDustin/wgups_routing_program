@@ -100,3 +100,12 @@ def get_user_package_id_input():
         print(f'\n❌ Invalid package ID! Please enter a numeric package ID (1-40).')
         return
 
+def get_user_truck_id_input():
+    try:
+        truck_id = int(input(f'\nEnter a truck ID (1-3): '))
+        if truck_id < 1 or truck_id > 3:
+            raise ValueError
+        return truck_id
+    except ValueError:
+        print(f'\n❌ Invalid truck ID! Please enter a numeric truck ID (1-3).')
+        get_user_truck_id_input()
