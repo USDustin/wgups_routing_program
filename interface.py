@@ -22,7 +22,7 @@ class CommandLineInterface:
         """
         package_id = get_user_package_id_input()
         timedelta = get_user_time_input()
-        print(f'\nStatus of package {package_id} at {timedelta}:')
+        print(f'\nStatus of package {package_id} at {timedelta}:\n')
         package = self.package_table.lookup(package_id)
         package.update_status(timedelta)
         print(str(package))
@@ -44,7 +44,7 @@ class CommandLineInterface:
         """
         truck_id = get_user_truck_id_input()
         timedelta = get_user_time_input()
-        print(f'\nStatus of packages loaded on Truck {truck_id} at {timedelta}:')
+        print(f'\nStatus of packages loaded on Truck {truck_id} at {timedelta}:\n')
         truck = self.truck_list[truck_id - 1]
         for package in truck.packages:
             package.update_status(timedelta)
