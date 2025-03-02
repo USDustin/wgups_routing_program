@@ -18,14 +18,17 @@ class HashTable:
         return key % self.size
 
     def insert(self, package_id, package):
-        """Insert package into hash table or update if it already exists"""
+        """
+        Insert package into hash table or update if it already exists
+        Task 2 A
+        """
         index = self._hash(package_id)
         bucket = self.table[index]
 
         # Check if package_id is already in the hash table, then update
         for i, (pid, _) in enumerate(bucket):
             if pid == package_id:
-                bucket[i] = [package_id, package] # Change this line to add a package object to the bucket
+                bucket[i] = [package_id, package]
                 return
 
         # If package_id is not in the hash table, append to end of table
