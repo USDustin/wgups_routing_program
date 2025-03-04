@@ -14,7 +14,7 @@ class CommandLineInterface:
 
     def print_miles_by_truck(self):
         for truck in self.truck_list:
-            print(f'Truck {truck.truck_id} miles driven: {truck.miles:.2f}')
+            print(f"Truck {truck.truck_id} miles driven: {truck.miles:.2f}")
 
     def print_package_status(self):
         """
@@ -22,7 +22,7 @@ class CommandLineInterface:
         """
         package_id = get_user_package_id_input()
         timedelta = get_user_time_input()
-        print(f'\nStatus of package {package_id} at {timedelta}:\n')
+        print(f"\nStatus of package {package_id} at {timedelta}:\n")
         package = self.package_table.lookup(package_id)
         package.update_status(timedelta)
         print(str(package))
@@ -32,7 +32,7 @@ class CommandLineInterface:
         Prints all packages at a specific time
         """
         timedelta = get_user_time_input()
-        print(f'\nStatus of all packages at {timedelta}:\n')
+        print(f"\nStatus of all packages at {timedelta}:\n")
         for package_id in range(1, 41):
             package = self.package_table.lookup(package_id)
             package.update_status(timedelta)
@@ -44,7 +44,7 @@ class CommandLineInterface:
         """
         truck_id = get_user_truck_id_input()
         timedelta = get_user_time_input()
-        print(f'\nStatus of packages loaded on Truck {truck_id} at {timedelta}:\n')
+        print(f"\nStatus of packages loaded on Truck {truck_id} at {timedelta}:\n")
         truck = self.truck_list[truck_id - 1]
         for package in truck.packages:
             package.update_status(timedelta)
@@ -56,16 +56,16 @@ class CommandLineInterface:
         Allows the user to view status of packages by time, package id, or per truck
         """
         while True:
-            print(f'\n' + f'=' * 50)
+            print(f"\n" + f"=" * 50)
             print(f"{'Western Governors University Parcel Service': ^50}")
-            print(f'=' * 50)
-            print(f'\n1. View status of a package at a specific time')
-            print(f'2. View status of all packages at a specific time')
-            print(f'3. View status of packages per truck')
-            print(f'4. View total mileage traveled by all trucks')
-            print(f'5. Exit\n')
+            print(f"=" * 50)
+            print(f"\n1. View status of a package at a specific time")
+            print(f"2. View status of all packages at a specific time")
+            print(f"3. View status of packages per truck")
+            print(f"4. View total mileage traveled by all trucks")
+            print(f"5. Exit\n")
 
-            choice = input(f'Enter your choice (1-5): ').strip()
+            choice = input(f"Enter your choice (1-5): ").strip()
 
             match choice:
                 case "1":
@@ -82,10 +82,11 @@ class CommandLineInterface:
                     self.print_miles_by_truck()
                     return_to_menu()
                 case "5":
-                    print(f'\nGoodbye!')
+                    print(f"\nGoodbye!")
                     break
                 case _:
-                    print(f'\n❌ Invalid choice. Please try again.')
+                    print(f"\n❌ Invalid choice. Please try again.")
+
 
 def return_to_menu():
     while True:
@@ -95,34 +96,40 @@ def return_to_menu():
         except ValueError:
             print("\n❌ Invalid input! Please try again.")
 
+
 def get_user_package_id_input():
     try:
-        package_id = int(input(f'\nEnter a package ID: '))
+        package_id = int(input(f"\nEnter a package ID: "))
         if package_id < 1 or package_id > 40:
             raise ValueError
         return package_id
     except ValueError:
-        print(f'\n❌ Invalid package ID! Please enter a numeric package ID (1-40).')
+        print(f"\n❌ Invalid package ID! Please enter a numeric package ID (1-40).")
         return get_user_package_id_input()
+
 
 def get_user_truck_id_input():
     try:
-        truck_id = int(input(f'\nEnter a truck ID (1-3): '))
+        truck_id = int(input(f"\nEnter a truck ID (1-3): "))
         if truck_id < 1 or truck_id > 3:
             raise ValueError
         return truck_id
     except ValueError:
-        print(f'\n❌ Invalid truck ID! Please enter a numeric truck ID (1-3).')
+        print(f"\n❌ Invalid truck ID! Please enter a numeric truck ID (1-3).")
         return get_user_truck_id_input()
+
 
 def get_user_time_input():
     try:
-        input_time = input(f'\nEnter a time (HH:MM:SS): ')
+        input_time = input(f"\nEnter a time (HH:MM:SS): ")
         return get_timedelta(input_time)
     except ValueError:
-        print(f'\n❌ Invalid time format. Please enter a valid time (HH:MM:SS).')
+        print(f"\n❌ Invalid time format. Please enter a valid time (HH:MM:SS).")
         return get_user_time_input()
 
+
 def get_timedelta(input_time):
-    (hours, minutes, seconds) = input_time.split(':')
-    return datetime.timedelta(hours=int(hours), minutes=int(minutes), seconds=int(seconds))
+    (hours, minutes, seconds) = input_time.split(":")
+    return datetime.timedelta(
+        hours=int(hours), minutes=int(minutes), seconds=int(seconds)
+    )

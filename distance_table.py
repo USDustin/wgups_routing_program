@@ -1,5 +1,6 @@
 import csv
 
+
 class DistanceTable:
 
     def __init__(self, file):

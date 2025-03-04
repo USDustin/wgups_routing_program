@@ -1,11 +1,9 @@
-
-
 class HashTable:
 
     def __init__(self, initial_size=40):
 
         self.size = initial_size
-        self.table = [[] for _ in range(self.size)] # Create a list of lists
+        self.table = [[] for _ in range(self.size)]  # Create a list of lists
 
     def __str__(self):
         return str(self.table)

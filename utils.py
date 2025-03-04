@@ -1,8 +1,8 @@
 import csv
 import datetime
 
-from package import Package
 from address import Address
+from package import Package
 
 
 def load_package_table(package_list, package_table):

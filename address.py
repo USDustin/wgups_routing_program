@@ -1,5 +1,3 @@
-
-
 class Address:
     def __init__(self, index, name, street):
         self.address_index = index

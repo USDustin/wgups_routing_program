@@ -47,7 +47,8 @@ class Truck:
                 # 19 packages
                 self.packages = [2, 4, 5, 7, 8, 9, 10, 11, 12, 17, 21, 22, 23, 24, 26, 27, 33, 35, 39]
 
-
     def __str__(self):
-        return (f"Truck: {self.speed}, {self.capacity}, {self.packages}, {self.load}, {self.miles}, {self.address},"
-                f" {self.depart_time}")
+        return (
+            f"Truck: {self.speed}, {self.capacity}, {self.packages}, {self.load}, {self.miles}, {self.address},"
+            f" {self.depart_time}"
+        )
