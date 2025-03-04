@@ -1,3 +1,6 @@
+import datetime
+
+
 class Package:
 
     def __init__(
@@ -15,6 +18,10 @@ class Package:
         self.depart_time = None
 
     def update_status(self, time_delta):
+        if self.package_id == 9 and time_delta >= datetime.timedelta(hours=10, minutes=20):
+            self.update_address("410 S State St", "Salt Lake City", "UT", "84111")
+        elif self.package_id ==9 and time_delta < datetime.timedelta(hours=10, minutes=20):
+            self.update_address("300 State St", "Salt Lake City", "UT", "84103")
         match (self.delivery_time < time_delta, self.depart_time > time_delta):
             case (True, _):
                 # User inputted time is after the delivery time
@@ -25,6 +32,12 @@ class Package:
             case _:
                 # User inputted time is between the delivery and departure times
                 self.status = "En route"
+
+    def update_address(self, address, city, state, zip_code):
+        self.address = address
+        self.city = city
+        self.state = state
+        self.zip_code = zip_code
 
     def __str__(self):
         return (
