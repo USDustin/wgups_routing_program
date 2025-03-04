@@ -49,7 +49,13 @@ class DeliveryScheduler:
 
 
     def create_route(self, truck):
-        """Creates a route for each truck"""
+        """
+        Creates a route for each truck
+        Updates the address of package #9
+        """
+        for package_id in truck.packages:
+            if package_id == 9:
+                self.package_table.lookup(package_id).update_address("410 S State St", "Salt Lake City", "UT", "84111")
         return self.nearest_neighbor(truck, self.address_list)
 
     def deliver_packages(self, truck, delivery_route):
@@ -64,8 +70,6 @@ class DeliveryScheduler:
 
         # Deliver packages in order of delivery
         for package in delivery_route:
-            # if truck.truck_id == 3:
-            #     print(f'Truck 3 current time: {truck.current_time}')
             address_index = utils.get_address_index(package.address, self.address_list)
             miles = float(self.distance_table.get_distance(
                 current_address_index, address_index))
