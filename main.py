@@ -6,14 +6,11 @@ Date: 2025-02-27
 """
 
 import utils
-from hashtable import HashTable
 from distance_table import DistanceTable
-from package import Package
+from hashtable import HashTable
+from interface import CommandLineInterface
 from scheduler import DeliveryScheduler
 from truck import Truck
-from interface import CommandLineInterface
-
-from datetime import datetime, time
 
 
 def main():
