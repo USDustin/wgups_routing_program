@@ -29,6 +29,7 @@ class Package:
             case (_, True):
                 # User inputted time is before the departure time
                 self.status = "At the hub"
+                self.update_delayed_packages(time_delta)
             case _:
                 # User inputted time is between the delivery and departure times
                 self.status = "En route"
@@ -38,6 +39,23 @@ class Package:
         self.city = city
         self.state = state
         self.zip_code = zip_code
+
+    def update_delayed_packages(self, time_delta):
+        """
+        Updates the status of delayed packages
+        """
+        match (self.package_id, time_delta <= datetime.timedelta(hours=9, minutes=5)):
+            case (6, True):
+                self.status = "Delayed on flight - will not arrive to depot until 9:05 AM"
+            case (25, True):
+                self.status = "Delayed on flight - will not arrive to depot until 9:05 AM"
+            case (28, True):
+                self.status = "Delayed on flight - will not arrive to depot until 9:05 AM"
+            case (32, True):
+                self.status = "Delayed on flight - will not arrive to depot until 9:05 AM"
+            case _:
+                return
+
 
     def __str__(self):
         return (
